@@ -12,19 +12,14 @@ export default function App() {
         alanBtn({
             key:alanKey,
             onCommand: function (commandData,number) {
-                if (commandData.command === "home") {
-                  console.log(commandData.y)
-                }
                 if (commandData.command === 'newHeadlines') {
                     setNews(commandData.data.data.articles);
                 }
                 if (commandData.command === 'highlight') {
                   setActiveArticle((prevActiveArticle)=>prevActiveArticle+1)
                 }
-                if (commandData.command === 'open') {
-                  console.log("open");
-                  console.log(number)
-                  console.log(commandData);
+                if (commandData.command === 'back') {
+                  window.location.reload(false);
                 }
             },
         })
